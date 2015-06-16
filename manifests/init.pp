@@ -115,6 +115,8 @@
 #
 # $srv_domain::                    Search domain for SRV records
 #
+# $autosign::                      path to autosign.conf or binary.
+#                                  Defaults to '$confdir/autosign.conf'
 # $pluginsource::                  URL to retrieve Puppet plugins from during pluginsync
 #
 # $pluginfactsource::              URL to retrieve Puppet facts from during pluginsync
@@ -402,6 +404,7 @@ class puppet (
   $dns_alt_names                 = $puppet::params::dns_alt_names,
   $use_srv_records               = $puppet::params::use_srv_records,
   $srv_domain                    = $puppet::params::srv_domain,
+  $autosign                      = $puppet::params::autosign,
   $pluginsource                  = $puppet::params::pluginsource,
   $pluginfactsource              = $puppet::params::pluginfactsource,
   $additional_settings           = $puppet::params::additional_settings,
@@ -515,7 +518,7 @@ class puppet (
   if $server_puppetdb_host {
     validate_string($server_puppetdb_host)
   }
-  
+
   if $server_http {
     validate_array($server_http_allow)
   }

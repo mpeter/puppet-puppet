@@ -26,6 +26,7 @@ class puppet::params {
   $dns_alt_names       = []
   $use_srv_records     = false
   $srv_domain          = $::domain
+  $autosign            = '$confdir/autosign.conf { mode = 664 }'
   # lint:ignore:puppet_url_without_modules
   $pluginsource        = 'puppet:///plugins'
   $pluginfactsource    = 'puppet:///pluginfacts'
