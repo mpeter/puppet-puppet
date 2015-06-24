@@ -15,6 +15,7 @@ class puppet::params {
   $runmode             = 'service'
   $cron_cmd            = undef
   $agent_noop          = false
+  $agent_certname      = $::clientcert
   $show_diff           = false
   $module_repository   = undef
   $configtimeout       = 120

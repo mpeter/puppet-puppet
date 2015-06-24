@@ -394,6 +394,7 @@ class puppet (
   $runmode                       = $puppet::params::runmode,
   $cron_cmd                      = $puppet::params::cron_cmd,
   $agent_noop                    = $puppet::params::agent_noop,
+  $agent_certname                = $puppet::params::agent_certname,
   $show_diff                     = $puppet::params::show_diff,
   $module_repository             = $puppet::params::module_repository,
   $configtimeout                 = $puppet::params::configtimeout,
